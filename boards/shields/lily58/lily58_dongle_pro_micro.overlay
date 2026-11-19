@@ -120,38 +120,37 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
 };
 
 // test 128x64 display with AI
-&pro_micro_i2c {
-    status = "okay";
+//&pro_micro_i2c {
+//    status = "okay";
 
-    oled: ssd1306@3c {
-        compatible = "sinowealth,sh1106";
-        reg = <0x3c>;
-        width = <128>;
-        height = <64>;
-        segment-offset = <2>;       // Обязательно для 1.3"
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <63>;
-        segment-remap;              // Оставляем для стандартного маппинга
-        com-invdir;                 // Оставляем для инверсии сканирования
-        com-sequential;             // Добавлено: последовательная конфигурация COM-пинов
-        prechargep = <0x22>;
-    };
-};
+//    oled: ssd1306@3c {
+//        compatible = "sinowealth,sh1106";
+//        reg = <0x3c>;
+//        width = <128>;
+//        height = <64>;
+//        segment-offset = <2>;        Обязательно для 1.3"
+//        page-offset = <0>;
+//        display-offset = <0>;
+//        multiplex-ratio = <63>;
+//        segment-remap;               Оставляем для стандартного маппинга
+//        com-invdir;                  Оставляем для инверсии сканирования
+//        com-sequential;              Добавлено: последовательная конфигурация COM-пинов
+//        prechargep = <0x22>;
+//    };
+//};
 
-// ssd1107
 &pro_micro_i2c {
     status = "okay";
 
     oled: sh1107@3c {
-        compatible = "sinowealth,sh1107";
+        compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
-        width = <64>;   // Ширина 64, а не 128
-        height = <128>; // Высота 128, а не 64
+        width = <64>;
+        height = <128>;
         segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
-        multiplex-ratio = <127>; // Соответствует высоте 128
+        multiplex-ratio = <127>;
         segment-remap;
         com-invdir;
         prechargep = <0x22>;
