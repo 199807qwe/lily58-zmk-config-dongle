@@ -67,13 +67,12 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         reg = <0x3c>;
         width = <64>;
         height = <128>;
-        segment-offset = <2>; // <-- Главное изменение
+        segment-offset = <0>; // сменить если не работает норм
         page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <119>;
+        display-offset = <0x60>;    // сменить если не работает норм
+        multiplex-ratio = <127>;
         segment-remap;
-        com-invdir;
-        inversion-on;
+        com-invdir; // inversion-on;
         prechargep = <0x22>;
     };
 };
