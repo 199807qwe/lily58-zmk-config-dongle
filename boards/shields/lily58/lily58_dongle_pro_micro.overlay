@@ -65,12 +65,12 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
     oled: sh1106@3c { // <-- Изменено имя узла (необязательно, но для порядка)
         compatible = "sinowealth,sh1106"; // <-- Главное изменение
         reg = <0x3c>;
-        width = <128>;
-        height = <64>;
+        width = <64>;
+        height = <128>;
         segment-offset = <0>; // сменить если не работает норм
         page-offset = <0>;
         display-offset = <0x60>;    // сменить если не работает норм
-        multiplex-ratio = <63>;
+        multiplex-ratio = <127>;
         segment-remap;
         com-invdir; // 
         inversion-on;
