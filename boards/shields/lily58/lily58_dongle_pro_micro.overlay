@@ -70,10 +70,10 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5) RC(4,6) RC(3,6) RC(3,7) 
         segment-offset = <0>; // сменить если не работает норм
         page-offset = <0>;
         display-offset = <0x60>;    // сменить если не работает норм
-        multiplex-ratio = <127>;
+        multiplex-ratio = <63>;
         segment-remap;
-        rotation = <90>;
-        com-invdir; // inversion-on;
+        com-invdir; // 
+        inversion-on;
         prechargep = <0x22>;
     };
 };
